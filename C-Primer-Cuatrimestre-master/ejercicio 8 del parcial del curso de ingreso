@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char letra;
+    int num;
+    int contadorPares = 0;
+    int contadorImpares = 0;
+    int contadorCeros = 0;
+    int acumPositivos = 0;
+    int acumNegativos = 0;
+    float promPositivos;
+    int numMax;
+    int numMin;
+    char letraMin;
+    char letraMax;
+    int contadorPositivo = 0;
+    int flag = 0;
+    char seguir;
+
+
+    do{
+        printf("ingrese un numero: ");
+
+        scanf("%d", &num);
+
+        while (!(num <=100 && num>= -100))
+        {
+            printf("Invalido, riengrese un numero: ");
+
+            scanf("%d", &num);
+        }
+
+        printf("ingrese una letra");
+
+        scanf("&c", &letra);
+
+
+        if (num == 0);
+        {
+            contadorCeros ++;
+
+        }if else (num % 2 == 0)
+        {
+           contadorPares ++;
+
+        }else
+
+        {
+            contadorImpares ++;
+
+        }
+
+
+
+        if (num < 0 )
+        {
+            acumNegativos = acumNegativos + num;
+
+        }
+
+        if (num > 0)
+        {
+            acumPositivos = acumPositivos + num;
+            contadorPositivo ++;
+        }
+
+
+        if ( num > numMax || flag == 0)
+        {
+            numMax = num;
+
+            letraMax = letra;
+
+        }
+
+        if (num < numMin || flag == 0)
+
+        {
+        numMin = num;
+
+        letraMin = letra;
+
+        flag ++;
+        }
+
+        printf("quiere seguir ingresando datos? ");
+
+        scanf("%c", &seguir);
+
+
+    } while ( seguir == 's');
+
+
+
+     promPositivos =  (float) acumPositivos / contadorPositivo;
+
+     printf ("el promedio de los positivos es de %f" , promPositivos );
+
+     printf("la cantidad de numeros impares es de %d" , contadorImpares);
+
+     printf("la cantidad de numeros pares es de %d" , contadorPares);
+
+     printf("la cantidad de ceros es de %d ", contadorCeros);
+
+     printf(" la suma de los negativos es de %d", acumNegativos);
+
+     printf("el numero maximo es %d y su letra es %c", numMax, letraMax);
+
+     printf("el numero min es %d y su letra es %c", numMin, letraMin);;
+
+
+
+
+}
+
+
+
+
+
+
